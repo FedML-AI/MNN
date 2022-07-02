@@ -27,7 +27,7 @@ public:
 
     const VARP labels();
 
-    static DatasetPtr create(const std::string path, Mode mode = Mode::TRAIN);
+    static DatasetPtr create(const std::string path, Mode mode = Mode::TRAIN, int32_t trainSize = 60000, int32_t testSize = 10000);
 private:
     explicit MnistDataset(const std::string path, Mode mode = Mode::TRAIN);
     VARP mImages, mLabels;
