@@ -1,4 +1,4 @@
-# MNN 训练相关工具
+# MNN 训练相关工具 (Customized by FedML, Inc.)
 
 ## 编译
 ### MNN 编译与安装
