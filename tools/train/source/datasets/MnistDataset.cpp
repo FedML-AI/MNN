@@ -15,8 +15,8 @@ namespace Train {
 
 // referenced from pytorch C++ frontend mnist.cpp
 // https://github.com/pytorch/pytorch/blob/master/torch/csrc/api/src/data/datasets/mnist.cpp
-static int32_t kTrainSize;
-static int32_t kTestSize;
+const int32_t kTrainSize          = 60000;
+const int32_t kTestSize           = 10000;
 const int32_t kImageMagicNumber   = 2051;
 const int32_t kTargetMagicNumber  = 2049;
 const int32_t kImageRows          = 28;
@@ -142,10 +142,7 @@ const VARP MnistDataset::labels() {
     return mLabels;
 }
 
-DatasetPtr MnistDataset::create(const std::string path, Mode mode, int32_t trainSize, int32_t testSize) {
-    kTrainSize = trainSize;
-    kTestSize = testSize;
-
+DatasetPtr MnistDataset::create(const std::string path, Mode mode) {
     DatasetPtr res;
     res.mDataset.reset(new MnistDataset(path, mode));
     return res;
